@@ -52,7 +52,21 @@ jobs:
             gh release create "$TAG" --title "Capri $TAG" --notes "Capri $TAG 배포"
           fi
 
+          # [2026-09-25 버그수정] electron-builder가 만드는 latest.yml은 파일명의 공백을
+          #   하이픈으로 바꾼 이름(예: Capri-Setup-0.28.0.exe)을 다운로드 주소로 적어 둔다.
+          #   그런데 gh release upload가 공백 있는 파일명을 그대로 올리면 GitHub가 공백을
+          #   하이픈이 아니라 마침표로 바꿔버려(Capri.Setup.0.28.0.exe) latest.yml이 가리키는
+          #   이름과 실제 파일명이 어긋나고, 사용자 PC의 자동 업데이트가 404로 실패했다
+          #   (오너가 실제로 겪은 "Cannot download ... status 404"). 업로드 전에 공백을
+          #   직접 하이픈으로 바꿔, GitHub의 자동 변환이 끼어들 일 자체를 없앤다.
           for f in "$DIR"/*; do
+            base="$(basename "$f")"
+            name="${base// /-}"
+            if [ "$base" != "$name" ]; then
+              echo "이름 정리: '$base' → '$name' (latest.yml이 가리키는 이름과 맞춤)"
+              mv "$f" "$DIR/$name"
+              f="$DIR/$name"
+            fi
             echo "업로드: $f"
             gh release upload "$TAG" "$f" --clobber
           done
