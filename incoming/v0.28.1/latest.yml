@@ -1,0 +1,8 @@
+version: 0.28.1
+files:
+  - url: Capri-Setup-0.28.1.exe
+    sha512: amQRYyyk2Q17ZuuZmTy/qQK17LYrHZFf+FPF9suWVBkEXhw60koQ6L+d7tQiy2clFsCrXZrK7UtpFBeWtm2pvQ==
+    size: 101274430
+path: Capri-Setup-0.28.1.exe
+sha512: amQRYyyk2Q17ZuuZmTy/qQK17LYrHZFf+FPF9suWVBkEXhw60koQ6L+d7tQiy2clFsCrXZrK7UtpFBeWtm2pvQ==
+releaseDate: '2026-09-25T15:11:11.860Z'
