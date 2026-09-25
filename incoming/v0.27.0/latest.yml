@@ -1,0 +1,8 @@
+version: 0.27.0
+files:
+  - url: Capri-Setup-0.27.0.exe
+    sha512: XnEoBnudG/j9dHs9vWPFEfa3oweV/0mpoPap/RZutPIS7xI+/Z8u/PbuSu44uVydso9S6rhW1tuDEnjXDAMpjw==
+    size: 101273003
+path: Capri-Setup-0.27.0.exe
+sha512: XnEoBnudG/j9dHs9vWPFEfa3oweV/0mpoPap/RZutPIS7xI+/Z8u/PbuSu44uVydso9S6rhW1tuDEnjXDAMpjw==
+releaseDate: '2026-09-25T14:20:20.237Z'
